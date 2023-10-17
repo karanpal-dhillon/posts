@@ -1,0 +1,42 @@
+import { createSlice, nanoid } from "@reduxjs/toolkit";
+
+const initialState = [
+  {
+    id: "1",
+    title: "Learning Redux",
+    content: "I have heared good things about it.",
+  },
+  {
+    id: "2",
+    title: "Slices....",
+    content: "The more I say slices, the more I want a pizza",
+  },
+];
+
+const postsSlice = createSlice({
+  name: "posts",
+  initialState,
+  reducers: {
+    postAdded: {
+      reducer: (state, action) => {
+        state.push(action.payload);
+      },
+      prepare: (title, content, userId) => {
+        return {
+          payload: {
+            id: nanoid(),
+            title,
+            content,
+            userId,
+          },
+        };
+      },
+    },
+  },
+});
+
+export const { postAdded } = postsSlice.actions;
+export const selectAllPosts = (state) => {
+  return state.posts;
+};
+export default postsSlice.reducer;
