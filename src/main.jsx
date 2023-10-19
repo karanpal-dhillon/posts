@@ -9,6 +9,7 @@ import Layout from "./components/Layout.jsx";
 import { RouterProvider } from "react-router-dom";
 import AddPostForm from "./features/posts/AddPostForm.jsx";
 import PostDetail from "./features/posts/PostDetail.jsx";
+import EditPostForm from "./features/posts/EditPostForm.jsx";
 store.dispatch(fetchUsers());
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: "post/:id",
         element: <PostDetail />,
       },
+      {
+        path: "post/:id/edit",
+        element: <EditPostForm />
+      }
     ],
   },
 ]);
