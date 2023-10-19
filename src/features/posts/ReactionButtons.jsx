@@ -17,7 +17,7 @@ const ReactionButtons = ({ post }) => {
       return (
         <button
           key={reaction}
-          style={{ background: "none", border: "none", color: "white" }}
+          className="reactionButton"
           onClick={() =>
             dispatch(reactionsAdded({ postId: post.id, reaction }))
           }

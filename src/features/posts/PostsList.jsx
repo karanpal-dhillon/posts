@@ -33,12 +33,7 @@ const PostsList = () => {
     <PostExcerpt post={post} key={post.id} />
   ));
 
-  return (
-    <section>
-      <h2>Posts</h2>
-      {renderedPosts}
-    </section>
-  );
+  return <section>{renderedPosts}</section>;
 };
 
 export default PostsList;
