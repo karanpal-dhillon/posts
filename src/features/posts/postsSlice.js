@@ -1,7 +1,6 @@
-import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createAsyncThunk, createSlice, nanoid } from "@reduxjs/toolkit";
 import { sub } from "date-fns";
-
 const POSTS_URL = `https://jsonplaceholder.typicode.com/posts`;
 
 const initialState = {

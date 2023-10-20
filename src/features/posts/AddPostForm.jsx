@@ -54,7 +54,7 @@ const AddPostForm = () => {
           value={title}
           onChange={onTitleChange}
         />
-        <label htmlFor="user">Select User</label>
+        <label htmlFor="userId">Select User</label>
         <select
           name="userId"
           id="userId"

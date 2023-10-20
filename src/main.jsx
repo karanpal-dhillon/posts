@@ -10,6 +10,10 @@ import { RouterProvider } from "react-router-dom";
 import AddPostForm from "./features/posts/AddPostForm.jsx";
 import PostDetail from "./features/posts/PostDetail.jsx";
 import EditPostForm from "./features/posts/EditPostForm.jsx";
+import { fetchPosts } from "./features/posts/postsSlice.js";
+import UsersList from "./features/users/UsersList.jsx";
+import UserPage from "./features/users/UserPage.jsx";
+store.dispatch(fetchPosts())
 store.dispatch(fetchUsers());
 
 const router = createBrowserRouter([
@@ -32,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: "post/:id/edit",
         element: <EditPostForm />
+      },
+      {
+        path: 'users',
+        element: <UsersList />
+      },
+      {
+        path: 'user/:id',
+        element: <UserPage />
       }
     ],
   },
